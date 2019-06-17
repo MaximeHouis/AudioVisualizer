@@ -28,6 +28,13 @@ Application::Application()
     _music.setBuffer(_soundBuffer);
     _music.setLoop(true);
     _music.play();
+
+    _visualizer = std::make_unique<AudioVisualizer>(_music, _soundBuffer);
+
+    constexpr float circleSize = 42;
+    _tmpCircle.setFillColor(sf::Color::Yellow);
+    _tmpCircle.setRadius(circleSize);
+    _tmpCircle.setOrigin(circleSize, circleSize);
 }
 
 void Application::_pollEvents()
@@ -40,11 +47,17 @@ void Application::_pollEvents()
 
 void Application::_update()
 {
+    auto scale = _visualizer->getVisualizationData().scaleAverage;
+
+    _tmpCircle.setPosition(_window.getSize().x / 2.0f, _window.getSize().y / 2.0f);
+    _tmpCircle.setScale(scale, scale);
 }
 
 void Application::_render()
 {
     _window.clear();
+
+    _window.draw(_tmpCircle);
 
     _window.display();
 }

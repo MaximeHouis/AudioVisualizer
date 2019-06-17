@@ -19,6 +19,10 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
+#include <memory>
+
+#include "AudioVisualizer.hpp"
+
 class Application {
 private:
     const std::string _title{"SFML Audio Visualizer"};
@@ -28,8 +32,11 @@ private:
     sf::Sound _music{};
     sf::SoundBuffer _soundBuffer{};
 
+    sf::CircleShape _tmpCircle{};
+
     double _deltaTime{0};
     size_t _framerate{0};
+    std::unique_ptr<AudioVisualizer> _visualizer{nullptr};
 
     void _pollEvents();
     void _update();

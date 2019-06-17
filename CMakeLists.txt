@@ -22,7 +22,9 @@ add_library(
 add_executable(
     example
     Example/src/Main.cpp
-    Example/src/Application.cpp Example/include/Application.hpp)
+    Example/src/Application.cpp
+    Example/include/Application.hpp
+)
 
 target_link_libraries(example audio-visualizer sfml-audio sfml-system sfml-window sfml-graphics)
-target_include_directories(example PUBLIC Example/include)
+target_include_directories(example PUBLIC Lib Example/include)
