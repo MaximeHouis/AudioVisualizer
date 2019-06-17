@@ -15,16 +15,16 @@ endif ()
 
 add_library(
     audio-visualizer
-    Lib/AudioVisualizer.cpp
-    Lib/AudioVisualizer.hpp
+    AudioVisualizer.cpp
+    AudioVisualizer.hpp
 )
 
 add_executable(
     example
-    Example/src/Main.cpp
-    Example/src/Application.cpp
-    Example/include/Application.hpp
+    example/src/Main.cpp
+    example/src/Application.cpp
+    example/include/Application.hpp
 )
 
 target_link_libraries(example audio-visualizer sfml-audio sfml-system sfml-window sfml-graphics)
-target_include_directories(example PUBLIC Lib Example/include)
+target_include_directories(example PUBLIC . example/include)
