@@ -5,7 +5,7 @@
 !*.hpp
 !.gitignore
 !CMakeLists.txt
-!assets/*
+!example/assets/*
 !*.md
 !LICENSE
 
