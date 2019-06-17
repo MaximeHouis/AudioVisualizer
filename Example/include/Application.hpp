@@ -25,6 +25,9 @@ private:
 
     sf::RenderWindow _window;
     sf::Event _event{};
+    sf::Sound _music{};
+    sf::SoundBuffer _soundBuffer{};
+
     double _deltaTime{0};
     size_t _framerate{0};
 

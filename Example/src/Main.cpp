@@ -14,12 +14,19 @@
  * limitations under the License.
  */
 
+#include <iostream>
+
 #include "Application.hpp"
 
 int main()
 {
-    Application app;
+    try {
+        Application app;
 
-    app.run();
+        app.run();
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
     return 0;
 }

@@ -21,6 +21,13 @@ Application::Application()
     : _window{sf::VideoMode{1280, 720}, _title}
 {
     _window.setVerticalSyncEnabled(true);
+
+    if (!_soundBuffer.loadFromFile("assets/ignite.ogg"))
+        throw std::runtime_error{"Failed to load music."};
+
+    _music.setBuffer(_soundBuffer);
+    _music.setLoop(true);
+    _music.play();
 }
 
 void Application::_pollEvents()
