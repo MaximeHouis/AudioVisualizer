@@ -16,6 +16,25 @@
 
 #pragma once
 
+#include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
+
 class Application {
+private:
+    const std::string _title{"SFML Audio Visualizer"};
+
+    sf::RenderWindow _window;
+    sf::Event _event{};
+    double _deltaTime{0};
+    size_t _framerate{0};
+
+    void _pollEvents();
+    void _update();
+    void _render();
+    void _updateFramerate();
+public:
+    Application();
+
+    void run();
 };
 
