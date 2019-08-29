@@ -3,7 +3,7 @@ Audio Visualizer in C++
 *Only SFML-Audio is supported at the moment, but supporting more libraries would be awesome.*
 
 # Example and usage
-You can find an example SFML program en the `example` directory.
+You can find an example SFML program in the `example` directory.
 
 More details soon...
 
